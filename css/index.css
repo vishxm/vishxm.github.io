@@ -351,15 +351,16 @@
   }
   
   footer {
-    margin-top: 5em;
-    height: 7em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    height: 2em;
     flex-direction: column;
     justify-content: center;
     position: absolute;
     left: 0;
     right: 0;
     background-color: var(--bg-alt);
-    box-shadow: 0 -0.1em 1em rgb(0, 0, 0, 0.1);
+    box-shadow: 0 -0.1em 0.1em rgba(0, 0, 0, 0.1);
   }
   
   footer ul {
@@ -368,7 +369,7 @@
   
   footer small {
     font-weight: 500;
-    margin-top: 0.5em;
+    /* margin-top: 0.5em; */
   }
   
   @media (max-width: 950px) {
