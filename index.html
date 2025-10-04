@@ -1,160 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Vishwas Modhera's Portfolio Website " />
-    <meta name="google-adsense-account" content="ca-pub-2623154995195002">
-    <meta name="keywords" content="data, data engineer, data analytics,
-			personal website, data analytics, SQL, data ingestion, Python, Snowflake, dbt, pyspark, databricks, duckdb, delta lake, github, git, vishwas modhera, vishwas, modhera, iiit surat, Piramal, Pune, Tredence, Surat />
-    <link rel=" preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2623154995195002"
-        crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
-    <link rel="manifest" href="icon/site.webmanifest">
-    <link rel="icon" type="image/png" href="icon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwas Modhera - Data Analytics Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>Vishwas Modhera</title>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a4f5f 0%, #2d4a5e 25%, #3d2f5e 50%, #5a2f52 75%, #ff6b6b 100%);
+            z-index: -1;
+        }
+
+        .bg-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1647346425804-34383b95644b?q=80&w=2064&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        nav {
+            padding: 30px 0;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info a:hover {
+            opacity: 1;
+        }
+
+        .icon {
+            margin-right: 8px;
+            display: inline-flex;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .skill-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .experience-item {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .experience-header h3 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .experience-header .date {
+            font-size: 14px;
+            opacity: 0.7;
+            font-weight: 500;
+        }
+
+        .company {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 15px;
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+
+        .experience-item li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            opacity: 0.6;
+        }
+
+        .education-item {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .education-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .education-item p {
+            opacity: 0.8;
+            font-size: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            opacity: 0.6;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container, .nav-content {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
-
-<body class="body-light">
-    <!-- <header id="top">
-        <a class="icon-border header-title" href="#">VM</a>
-        <nav>
-            <ul id="nav">
-                <li>
-                    <a href="#transformation-stack" class="link">Tech Stack</a>
-                </li>
-                <li>
-                    <a href="#contact" class="link">Contact</a>
-                </li>
+<body>
+    <div class="bg-image"></div>
+    <!-- <div class="background"></div> -->
+    
+    <nav>
+        <div class="nav-content">
+            <div class="logo">VM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
             </ul>
-        </nav>
-    </header> -->
-
-    <div class="hero">
-        <h1>
-            I am
-            <span class="hero-name">Vishwas</span>
-            <span class="hero-name">Modhera</span>
-        </h1>
-
-        <div class="hero-about">
-            <H1>🧙💻</H1>
-            <br>
-            <p>
-                Data maestro and analytics ninja! I weave data into insights with code magic. Big data tamer by day,
-                wisdom seeker by night. Let’s make data dance!
-            </p>
         </div>
-    </div>
+    </nav>
 
-    <section id="transformation-stack" class="stack">
-        <h2 class="section-title">Tech Stack</h2>
-        <div class="stack-container">
-            <div class="tech-container">
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Vishwas Modhera</h1>
+            <h2>Data Analytics Engineer</h2>
+            <p>~4 years of experience in Finance, HR, Marketing and E-Commerce domains. Specializing in data engineering, analytics, and building scalable data solutions.</p>
+            
+            <div class="contact-info">
+                <a href="mailto:vmodhera7@gmail.com">
+                    <span class="icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    vmodhera7@gmail.com
+                </a>
+                <a href="tel:+919574188861">
+                    <span class="icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </span>
+                    +91-9574188861
+                </a>
+                <a href="https://linkedin.com/in/vishwas-modhera" target="_blank">
+                    <span class="icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </span>
+                    linkedin.com/in/vishwas-modhera
+                </a>
+            </div>
 
-                <img src="https://www.snowflake.com/wp-content/themes/snowflake/assets/img/brand-guidelines/logo-sno-blue-example.svg" width="210px"
-                    title="Snowflake" />
-            </div>
-            <div class="tech-container">
-
-                <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/3/dbt-ytv7trkoaqcnvr5yxcvvk.png/dbt-384wi7nth5d4pvytczw6vn.png?_a=DATAdtAAZAA0" height="140px"
-                    width="140px" title="dbt" />
-            </div>
-            <div class="tech-container">
-
-                <img src="https://www.svgrepo.com/show/354011/looker.svg" height="140px"
-                    width="140px" title="looker" />
-            </div>
-            <div class="tech-container">
-                <img src="https://www.python.org/static/community_logos/python-logo.png" width="210px"
-                    title="Python" />
-            </div>
-            <div class="tech-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/1200px-Apache_Spark_logo.svg.png"
-                    height="72px" width="140px" title="PySpark" />
-            </div>
-            <div class="tech-container">
-
-                <img src="https://images.icon-icons.com/2699/PNG/512/databricks_logo_icon_169299.png" width="160px"
-                    title="databricks" />
-            </div>
-            <div class="tech-container">
-
-                <img src="https://spark.apache.org/images/delta-lake-logo.png"
-                    width="160px" title="Delta Lake" />
-            </div>
-            <!-- <div class="tech-container">
-
-                <img src="https://asset.brandfetch.io/idzGznS_EP/idFa3d6Pr2.png" width="140px" title="Git" />
-            </div> -->
+            <a href="#" class="btn-download" id="downloadBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Resume
+            </a>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2 class="section-title">Get in touch</h2>
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Data Engineering</h3>
+                    <p>ETL pipelines, data warehousing, DBT, PySpark, Azure Databricks, Delta Live Tables</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud & Databases</h3>
+                    <p>Snowflake, AWS Redshift, Azure, Medallion architecture, SCD implementation</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Analytics & BI</h3>
+                    <p>Looker, PowerBI, data visualization, reporting, dashboard development</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <p>Python, SQL, Jinja, Git, shell scripting, automation</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <ul>
-            <li>
-                <a href="https://www.linkedin.com/in/vishwas-modhera/" aria-label="LinkedIn" target="_blank">
-                    <span class="btn">
-                        <i aria-hidden="true" class="fab icon fa-linkedin"></i>
-                        LinkedIn
-                    </span>
-                </a>
-            </li>
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Data Analytics Engineer</h3>
+                            <p class="company">Cimpress India</p>
+                        </div>
+                        <span class="date">Sep 2024 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Created a master dashboard to compare performance of customer-care agents in Looker with DBT models and unit tests to improve data integrity</li>
+                        <li>Analysed contact reasons and proposed solutions to reduce the number of support tickets</li>
+                        <li>Created Looker solutions to monitor rejected, delayed and on-time orders</li>
+                        <li>Refined existing products by making them error-free and dependable using DBT data and unit testing</li>
+                        <li>Spearheaded solutions to increase visibility on workplace safety metrics (LTIF)</li>
+                    </ul>
+                </div>
 
-            <li>
-                <a href="mailto:vmodhera7@gmail.com" target="_blank">
-                    <span class="btn">
-                        <i aria-hidden="true" class="fas icon fa-envelope"></i>
-                        Email
-                    </span>
-                </a>
-            </li>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Data Engineer Consultant</h3>
+                            <p class="company">Tredence Inc.</p>
+                        </div>
+                        <span class="date">Feb 2024 - Sep 2024</span>
+                    </div>
+                    <ul>
+                        <li>Created and maintained ETL pipelines to ingest raw data from Kafka event hub to Azure Databricks environments for Fortune 50 client</li>
+                        <li>Used PySpark and Delta Live Tables in Databricks to achieve idempotent solutions</li>
+                        <li>Designed and implemented Medallion architecture using DBT models while optimizing loading strategies</li>
+                        <li>Collaborated with analysts to create features in platinum layer from these models</li>
+                    </ul>
+                </div>
 
-            <li>
-                <a href="https://github.com/vishxm" aria-label="Github" target="_blank">
-                    <span class="btn">
-                        <i aria-hidden="true" class="fab icon fa-github"></i>
-                        Github
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a class="resume" href="archive/assets/resume/VishwasModhera_Resume_Latest.pdf" target="_blank">
-                    <span class="btn">
-                        <i aria-hidden="true" class="fas icon fa-download"></i>
-                        Resume
-                    </span>
-                </a>
-            </li>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Associate Data Engineer</h3>
+                            <p class="company">Aretove Technologies Pvt Ltd</p>
+                        </div>
+                        <span class="date">May 2023 - Feb 2024</span>
+                    </div>
+                    <ul>
+                        <li>Developed and maintained ETL processes and data validation</li>
+                        <li>Automated validation using Python and shell scripting, improving team efficiency and work-life balance</li>
+                        <li>Integrated data from various sources into staging in SCD type 2 format</li>
+                        <li>Migrated 250GB of data and transformation logic to DBT</li>
+                        <li>Utilized SQL and Jinja for data integrity testing</li>
+                    </ul>
+                </div>
 
-        </ul>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Data Engineer</h3>
+                            <p class="company">Piramal Capital & Housing Finance</p>
+                        </div>
+                        <span class="date">Jun 2021 - Nov 2022</span>
+                    </div>
+                    <ul>
+                        <li>Collaborated with Sales Planning and HR Analytics teams to drive employee productivity for 6,000 employees</li>
+                        <li>Implemented SCD mechanism to monitor rank changes, resulting in ~15% increase in employee activity and ₹200 crore in additional disbursements</li>
+                        <li>Developed framework to identify underperforming employees and notify HR Business Partners, leading to performance improvements in 110 cases</li>
+                        <li>Partnered with Risk Analytics team to create risk-tracking data mart for various customer cohorts</li>
+                        <li>Built ETL pipelines to aggregate key risk indicators and developed automated alert system for KPIs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-item">
+                <h3>B.Tech in Computer Science Engineering</h3>
+                <p>IIIT Surat | 8.62 CGPA | Aug 2017 - Jun 2021</p>
+            </div>
+            <div class="education-item">
+                <h3>Certifications</h3>
+                <p>• Databricks Certified Associate Data Engineer</p>
+                <p>• Datacamp: Introduction to Data Science in Python</p>
+                <p>• Datacamp: Intermediate Python</p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <small>&copy;2024-25 Vishwas Modhera </small>
+        <div class="container">
+            <p>© 2024 Vishwas Modhera. All rights reserved.</p>
+        </div>
     </footer>
 
-    <div class="scroll-container">
-        <div aria-label="Scroll up" class="scroll-up">
-            <a href="#top">
-                <i aria-hidden="true" class="fas fa-arrow-up"></i>
-            </a>
-        </div>
-    </div>
-    <script src="./js/index.js"></script>
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a link element
+            const link = document.createElement('a');
+            link.href = 'VishwasModhera_Resume_Latest.pdf'; // Replace with your actual resume file path
+            link.download = 'Vishwas_Modhera_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 </body>
-
 </html>
